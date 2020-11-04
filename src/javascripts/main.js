@@ -1,8 +1,19 @@
 import '../styles/main.scss';
+import axios from 'axios';
+
+const getJoke = () => {
+  axios.get('https://official-joke-api.appspot.com/random_joke').then((response) => {
+    $('.punchline').html('');
+    $('.setup').html(`${response.data.setup}`);
+    $('.get-punchline').on('click', () => {
+      $('.punchline').html(`${response.data.punchline}`);
+    });
+  });
+};
 
 const init = () => {
-  $('#app').html('<h1>HELLO! You are up and running!</h1>');
-  console.log('YOU ARE UP AND RUNNING!');
+  getJoke();
+  $('.new-joke').on('click', getJoke);
 };
 
 init();
