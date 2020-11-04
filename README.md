@@ -1,3 +1,3 @@
 ![Screenshot](readme-img.png)
 
-[Deployed Site](mp-joke-generator.netlify.app)
+[Deployed Site](https://mp-joke-generator.web.app/)
